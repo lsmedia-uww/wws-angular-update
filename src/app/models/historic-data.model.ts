@@ -1,6 +1,31 @@
 import { Deserializable } from './deserializable.model';
 
 export class HistoricData implements Deserializable {
+  sensors: Sensor[];
+  generated_at: number;
+  station_id: number;
+
+  deserialize(input: any): this {
+    Object.assign(this, input);
+    this.sensors = input.sensors.map(sensor => new Sensor().deserialize(sensor));
+    return this;
+  }
+}
+
+class Sensor implements Deserializable {
+  lsid: number;
+  data: SensorData[];
+  sensor_type: number;
+  data_structure_type: number;
+
+  deserialize(input: any): this {
+    Object.assign(this, input);
+    this.data = input.data.map(data => new SensorData().deserialize(data));
+    return this;
+  }
+}
+
+class SensorData implements Deserializable {
   ts: number;
   arch_int: number;
   rev_type: number;

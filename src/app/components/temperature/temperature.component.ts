@@ -21,7 +21,7 @@ export class TemperatureComponent implements AfterViewChecked {
   showYAxisLabel = true;
   yAxisLabel = 'Temperature °F';
   yScaleMax = 50;
-  schemeType = 'air';
+  schemeType = 'vivid';
 
   constructor() { }
 

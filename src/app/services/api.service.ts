@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { API_URL } from '../constants/API';
+import { HistoricData } from '../models/historic-data.model';
 import { WeatherData } from '../models/weather-data.model';
 import { WeatherStationData } from '../models/weather-station-data.model';
 import { HandleError, HttpErrorHandlerService } from './http-error-handler.service';
@@ -12,13 +13,6 @@ import { HandleError, HttpErrorHandlerService } from './http-error-handler.servi
 })
 export class ApiService {
   private handleError: HandleError;
-  // private weatherStationDataSource = new Subject<WeatherStationData>();
-  // private currentWeatherSource = new Subject<WeatherData>();
-  // private historicWeatherSource = new Subject<WeatherData>();
-
-  // stationData$ = this.weatherStationDataSource.asObservable();
-  // currentWeather$ = this.currentWeatherSource.asObservable();
-  // historicWeather = this.historicWeatherSource.asObservable();
   
   constructor(
     private http: HttpClient,
@@ -33,21 +27,10 @@ export class ApiService {
     );
   }
 
-  // public getWeatherStationData() {
-  //   return this.http.get<WeatherStationData>(API_URL + '/station-data').pipe(
-  //     catchError(this.handleError('getWeatherStationData'))
-  //   );
-  // }
-
-  // public getCurrentWeather() {
-  //   return this.http.get<WeatherData>(API_URL).pipe(
-  //     catchError(this.handleError('getCurrentWeather'))
-  //   );
-  // }
-
-  // public getHistoricWeather() {
-  //   return this.http.get<WeatherData>(API_URL + '/historic').pipe(
-  //     catchError(this.handleError('getHistoricWeather'))
-  //   );
-  // }
+  public getHistoricWeatherData(): Observable<HistoricData> {
+    return this.http.get<HistoricData>(API_URL + '/historic').pipe(
+      map(data => new HistoricData().deserialize(data)),
+      catchError(() => throwError('Historic data not found'))
+    );
+  }
 }
