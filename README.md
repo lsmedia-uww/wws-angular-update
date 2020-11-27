@@ -1,6 +1,21 @@
-# WwsAngular
+# Whitewater Weather Station 🌤🌈
+This project is made with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
+A simple dashboard-like weather page. This application utilizes the WeatherLink API in conjunction with Cloudflare to access the JSON data from WeatherLink's servers.
+
+![demo](docs/demo.gif)
+
+## Setup
+In order to get this project running on your machine, you will need the following prerequisites installed on your machine.
+
+ - NodeJS
+ - Yarn Package Manager
+ - Angular CLI 9.0.3+
+ - Wrangler
+ - A good text editor (I use Visual Studio Code)
+ - Git
+
+To learn more about the setup of each item for Mac and Windows, click [here](SETUP.md)
 
 ## Development server
 
@@ -14,14 +29,4 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
