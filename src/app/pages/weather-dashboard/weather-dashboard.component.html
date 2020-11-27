@@ -1,13 +1,31 @@
-<div style="padding: 16px;">
-  <mat-grid-list cols="2" rowHeight="1:1">
-    <mat-grid-tile [colspan]="2" [rowspan]="1">
-      <mat-card>
-        <app-temperature></app-temperature>
+<div class="container" style="padding: 16px;">
+  <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" rowHeight="200px">
+    <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard.cols" [rowspan]="( cardLayout | async )?.miniCard.rows">
+      <mat-card class="mat-elevation-z5">
+        <mat-card-title>Temperature</mat-card-title>
+        <app-temperature [temp]="temp" [windChill]="windChill"></app-temperature>
       </mat-card>
     </mat-grid-tile>
-    <mat-grid-tile [colspan]="2" [rowspan]="1">
-      <mat-card>
+    <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard.cols" [rowspan]="( cardLayout | async )?.miniCard.rows">
+      <mat-card class="mat-elevation-z5">
+        <mat-card-title>Heat Index</mat-card-title>
+        <app-heat-index [heatIndex]="heatIndex"></app-heat-index>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard.cols" [rowspan]="( cardLayout | async )?.miniCard.rows">
+      <mat-card class="mat-elevation-z5">
+        <mat-card-title>Dew Point</mat-card-title>
+        <app-dew-point [dewPoint]="dewPoint"></app-dew-point>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="( cardLayout | async )?.chart.cols" [rowspan]="( cardLayout | async )?.chart.rows">
+      <mat-card class="mat-elevation-z5">
         <app-pressure></app-pressure>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard.cols" [rowspan]="( cardLayout | async )?.miniCard.rows">
+      <mat-card class="mat-elevation-z5">
+        <app-wind-rose [direction]="windDirection" [speed]="windSpeed"></app-wind-rose>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>

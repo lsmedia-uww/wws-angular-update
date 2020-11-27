@@ -11,6 +11,9 @@ import { AppComponent } from './app.component';
 import { PressureComponent } from './components/pressure/pressure.component';
 import { TemperatureComponent } from './components/temperature/temperature.component';
 import { WeatherDashboardComponent } from './pages/weather-dashboard/weather-dashboard.component';
+import { HeatIndexComponent } from './components/heat-index/heat-index.component';
+import { DewPointComponent } from './components/dew-point/dew-point.component';
+import { WindRoseComponent } from './components/wind-rose/wind-rose.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,9 @@ import { WeatherDashboardComponent } from './pages/weather-dashboard/weather-das
     TemperatureComponent,
     WeatherDashboardComponent,
     PressureComponent,
+    HeatIndexComponent,
+    DewPointComponent,
+    WindRoseComponent,
   ],
   imports: [
     BrowserModule,

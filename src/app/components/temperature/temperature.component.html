@@ -1,16 +1,9 @@
-<div class="w-100 h-100" #resizedDiv>
-  <ngx-charts-bar-vertical 
-    [scheme]="schemeType"
-    [results]="tempData"
-    [gradient]="gradient"
-    [xAxis]="showXAxis"
-    [yAxis]="showYAxis"
-    [legend]="showLegend"
-    [showXAxisLabel]="showXAxisLabel"
-    [showYAxisLabel]="showYAxisLabel"
-    [xAxisLabel]="xAxisLabel"
-    [yAxisLabel]="yAxisLabel"
-    [yScaleMax]="yScaleMax"
-    (select)="onSelect($event)">
-  </ngx-charts-bar-vertical>
+<div class="container">
+  <div class="rounded">
+    <i class="wi wi-thermometer icon"></i>
+  </div>
+  <div class="temp">
+    <h1 style="margin-bottom: 0; font-size: x-large; font-weight: bold;">{{temp}} °F</h1>
+    <p>Wind Chill: {{windChill}} °F</p>
+  </div>
 </div>

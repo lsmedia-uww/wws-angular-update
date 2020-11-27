@@ -20,6 +20,13 @@ export class ApiService {
      this.handleError = httpErrorHandler.createHandleError('ApiSerrvice');
   }
 
+  public getCurrentWeatherData(): Observable<WeatherData> {
+    return this.http.get<WeatherData>(API_URL).pipe(
+      map(data => new WeatherData().deserialize(data)),
+      catchError(() => throwError('Weather data not found'))
+    );
+  }
+
   public getWeatherStationData(): Observable<WeatherStationData> {
     return this.http.get<WeatherStationData>(API_URL + '/station-data').pipe(
       map(data => new WeatherStationData().deserialize(data)),
