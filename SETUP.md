@@ -57,4 +57,4 @@ Download git from their [website](https://git-scm.com/download/mac) or use brew 
 > brew install git
 
 
-Congrats! you're done! now navigate back to the [README]() file to understand what to do next for running the project and understanding Angular and each peice to this project.
+Congrats! you're done! now navigate back to the [README](README.md) file to understand what to do next for running the project and understanding Angular and each peice to this project.
