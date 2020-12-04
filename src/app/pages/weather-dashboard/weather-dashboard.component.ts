@@ -63,8 +63,8 @@ export class WeatherDashboardComponent implements AfterViewInit {
     });
 
     this.apiService.getCurrentWeatherData().subscribe(currentWeather => {
-      console.log(currentWeather);
-      this.windDirection = currentWeather.sensors[0].data[0].wind_dir;
+      let dir = currentWeather.sensors[0].data[0].wind_dir;
+      this.windDirection = Math.ceil((dir % 360) / 22.5) + 1;
       this.windSpeed = currentWeather.sensors[0].data[0].wind_speed;
     });
   }

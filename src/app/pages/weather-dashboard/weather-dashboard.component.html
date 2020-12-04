@@ -25,7 +25,8 @@
     </mat-grid-tile>
     <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard.cols" [rowspan]="( cardLayout | async )?.miniCard.rows">
       <mat-card class="mat-elevation-z5">
-        <app-wind-rose [direction]="windDirection" [speed]="windSpeed"></app-wind-rose>
+        <mat-card-title>Wind Speed & Direction</mat-card-title>
+        <app-wind-rose [direction]="windDirection"></app-wind-rose>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
