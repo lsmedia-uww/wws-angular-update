@@ -1,5 +1,5 @@
 # Whitewater Weather Station 🌤🌈
-This project is made with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
+This project is made with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.0.
 
 A simple dashboard-like weather page. This application utilizes the WeatherLink API in conjunction with Cloudflare to access the JSON data from WeatherLink's servers.
 
@@ -10,12 +10,12 @@ In order to get this project running on your machine, you will need the followin
 
  - NodeJS
  - Yarn Package Manager
- - Angular CLI 9.0.3+
+ - Angular CLI 11.0.0+
  - Wrangler
  - A good text editor (I use Visual Studio Code)
  - Git
 
-To learn more about the setup of each item for Mac and Windows, click [here](SETUP.md)
+To learn more about the setup of each item for Mac and Windows, click [here](docs/SETUP.md)
 
 ## Development server
 
