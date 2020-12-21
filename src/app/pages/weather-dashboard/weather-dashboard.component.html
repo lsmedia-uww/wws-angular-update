@@ -20,6 +20,11 @@
     </mat-grid-tile>
     <mat-grid-tile [colspan]="( cardLayout | async )?.chart.cols" [rowspan]="( cardLayout | async )?.chart.rows">
       <mat-card class="mat-elevation-z5">
+        <app-forecast [forecast]="forecastData"></app-forecast>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="( cardLayout | async )?.chart.cols" [rowspan]="( cardLayout | async )?.chart.rows">
+      <mat-card class="mat-elevation-z5">
         <app-pressure></app-pressure>
       </mat-card>
     </mat-grid-tile>
@@ -27,6 +32,12 @@
       <mat-card class="mat-elevation-z5">
         <mat-card-title>Wind Speed & Direction</mat-card-title>
         <app-wind-rose [direction]="windDirection"></app-wind-rose>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard.cols" [rowspan]="( cardLayout | async )?.miniCard.rows">
+      <mat-card class="mat-elevation-z5">
+        <mat-card-title>Total Daily Rain</mat-card-title>
+        <app-total-daily-rain [rain]="dailyRain"></app-total-daily-rain >
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>

@@ -64,8 +64,6 @@ export class PressureComponent implements OnInit {
   constructor(private api: ApiService) { }
 
   ngOnInit(): void {
-    const source = interval(10000);
-
     this.subscription = this.api.getHistoricWeatherData().subscribe(data => {
       const sensorData = [];
       data.sensors[0].data.forEach(item => {

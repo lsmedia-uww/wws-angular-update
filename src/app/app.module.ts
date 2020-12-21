@@ -3,8 +3,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTableModule } from '@angular/material/table';
+import { MatListModule } from '@angular/material/list';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ScrollingModule} from '@angular/cdk/scrolling';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +17,9 @@ import { WeatherDashboardComponent } from './pages/weather-dashboard/weather-das
 import { HeatIndexComponent } from './components/heat-index/heat-index.component';
 import { DewPointComponent } from './components/dew-point/dew-point.component';
 import { WindRoseComponent } from './components/wind-rose/wind-rose.component';
+import { TotalDailyRainComponent } from './components/total-daily-rain/total-daily-rain.component';
+import { Forecast } from './models/forecast.model';
+import { ForecastComponent } from './components/forecast/forecast.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +30,8 @@ import { WindRoseComponent } from './components/wind-rose/wind-rose.component';
     HeatIndexComponent,
     DewPointComponent,
     WindRoseComponent,
+    TotalDailyRainComponent,
+    ForecastComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +40,10 @@ import { WindRoseComponent } from './components/wind-rose/wind-rose.component';
     BrowserAnimationsModule,
     MatGridListModule,
     MatCardModule,
-    NgxChartsModule
+    MatListModule,
+    MatTableModule,
+    NgxChartsModule,
+    ScrollingModule,
   ],
   providers: [DecimalPipe, DatePipe],
   bootstrap: [AppComponent]

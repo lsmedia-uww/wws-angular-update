@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { API_URL } from '../constants/API';
+import { Forecast } from '../models/forecast.model';
 import { HistoricData } from '../models/historic-data.model';
 import { WeatherData } from '../models/weather-data.model';
 import { WeatherStationData } from '../models/weather-station-data.model';
@@ -37,7 +38,14 @@ export class ApiService {
   public getHistoricWeatherData(): Observable<HistoricData> {
     return this.http.get<HistoricData>(API_URL + '/historic').pipe(
       map(data => new HistoricData().deserialize(data)),
-      catchError(() => throwError('Historic data not found'))
+      catchError((error) => throwError('Historic data not found '))
+    );
+  }
+
+  public getForecastData(): Observable<Forecast> {
+    return this.http.get<Forecast>(API_URL + '/forecast').pipe(
+      map(data => new Forecast().deserialize(data)),
+      catchError((err) => throwError('Weather forecast not found ' + err))
     );
   }
 }

@@ -1,0 +1,125 @@
+<!-- <div *ngIf="forecast">
+  <div *ngIf="forecast.current.dt > forecast.current.sunset; else elseBlock">
+    <i class="wi wi-owm-night-{{forecast.current.weather[0].id}}"></i>
+  </div>
+  <ng-template #elseBlock>
+    <i class="wi wi-owm-day-{{forecast.current.weather[0].id}}"></i>
+  </ng-template>
+</div> -->
+<div *ngIf="forecast" class="forecast-container">
+  <!-- Makes sure that the data has been recieved before displaying anything -->
+  <div *ngIf="showMobileView == true; else elseBlock" class="mobile-view">
+    <div class="current">
+      <h1 style="margin-bottom: 0px;">Whitewater, WI</h1>
+      <h2>{{current | date:'EE d'}}</h2>
+      <p>{{forecast.current.weather[0].main}}</p>
+      <div class="temp-container" style="display: flex; align-items: center;">
+        <div class="temp-icon">
+          <div *ngIf="forecast.current.dt > forecast.current.sunset; else elseBlock">
+            <i class="wi wi-owm-night-{{forecast.current.weather[0].id}} icon"></i>
+          </div>
+          <ng-template #elseBlock>
+            <i class="wi wi-owm-day-{{forecast.current.weather[0].id}} icon"></i>
+          </ng-template>
+        </div>
+        <div class="temp">{{forecast.current.temp | number:'1.0-0'}}</div>
+        <div class="symbol">°F</div>
+      </div>
+    </div>
+    <div class="scrolling-wrapper">
+      <div *ngFor="let item of forecast.daily">
+        <div class="item-card">
+          <div style="text-align: center; color: #bababa;">{{item.dt * 1000 | date:'EEEE d'}}</div>
+          <div>
+            <i class="wi wi-owm-{{item.weather[0].id}}"></i>
+          </div>
+          <div style="flex-direction: row;">
+            <span style="color: #878787; margin-right: 4px;">{{item.temp.max | number:'1.0-0'}}°</span>
+            <span style="color: #bababa;">{{item.temp.min | number:'1.0-0'}}°</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <table mat-table [dataSource]="forecast.daily" class="item-table">
+      <ng-container matColumnDef="date">
+        <th mat-header-cell hidden="hidden" *matHeaderCellDef> Date </th>
+        <td mat-cell *matCellDef="let item">{{item.dt * 1000 | date:'EE d'}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="temp">
+        <th mat-header-cell hidden="hidden" *matHeaderCellDef> Tempterature </th>
+        <td mat-cell *matCellDef="let item"><strong>{{item.temp.day | number:'1.0-0'}}°F</strong>/{{item.temp.min |
+          number:'1.0-0'}}°F</td>
+      </ng-container>
+
+      <ng-container matColumnDef="icon">
+        <th mat-header-cell hidden="hidden" *matHeaderCellDef> Icon </th>
+        <td mat-cell *matCellDef="let item"><i class="wi wi-owm-{{item.weather[0].id}}"></i></td>
+      </ng-container>
+
+      <ng-container matColumnDef="weather-description">
+        <th mat-header-cell hidden="hidden" *matHeaderCellDef> Weather Desc </th>
+        <td mat-cell *matCellDef="let item">{{item.weather[0].description | titlecase}}</td>
+      </ng-container>
+
+      <tr mat-header-row hidden="hidden" *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table> -->
+  </div>
+  <ng-template #elseBlock>
+    <table style="width: 100%; height: 100%;">
+      <tr>
+        <td style="width: 50%; height: 100%;">
+          <div class="current">
+            <h1 style="margin-bottom: 0px;">Whitewater, WI</h1>
+            <h2>{{current | date:'EEEE'}}</h2>
+            <p>{{forecast.current.weather[0].main}}</p>
+            <div class="temp-container" style="display: flex; align-items: center;">
+              <div class="temp-icon">
+                <div *ngIf="forecast.current.dt > forecast.current.sunset; else elseBlock">
+                  <i class="wi wi-owm-night-{{forecast.current.weather[0].id}} icon"></i>
+                </div>
+                <ng-template #elseBlock>
+                  <i class="wi wi-owm-day-{{forecast.current.weather[0].id}} icon"></i>
+                </ng-template>
+              </div>
+              <div class="temp">{{forecast.current.temp | number:'1.0-0'}}</div>
+              <div class="symbol">°F</div>
+            </div>
+          </div>
+        </td>
+
+        <td style="width: 100%; height: 100%;">
+          <cdk-virtual-scroll-viewport [itemSize]="7" class="scroll-viewport">
+            <table mat-table [dataSource]="forecast.daily" class="item-table">
+              <ng-container matColumnDef="date">
+                <th mat-header-cell hidden="hidden" *matHeaderCellDef> Date </th>
+                <td mat-cell *matCellDef="let item">{{item.dt * 1000 | date:'E d'}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="temp">
+                <th mat-header-cell hidden="hidden" *matHeaderCellDef> Tempterature </th>
+                <td mat-cell *matCellDef="let item"><strong>{{item.temp.day |
+                    number:'1.0-0'}}°F</strong>/{{item.temp.min |
+                  number:'1.0-0'}}°F</td>
+              </ng-container>
+
+              <ng-container matColumnDef="icon">
+                <th mat-header-cell hidden="hidden" *matHeaderCellDef> Icon </th>
+                <td mat-cell *matCellDef="let item"><i class="wi wi-owm-{{item.weather[0].id}}"></i></td>
+              </ng-container>
+
+              <ng-container matColumnDef="weather-description">
+                <th mat-header-cell hidden="hidden" *matHeaderCellDef> Weather Desc </th>
+                <td mat-cell *matCellDef="let item">{{item.weather[0].description | titlecase}}</td>
+              </ng-container>
+
+              <tr mat-header-row hidden="hidden" *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </cdk-virtual-scroll-viewport>
+        </td>
+      </tr>
+    </table>
+  </ng-template>
+</div>

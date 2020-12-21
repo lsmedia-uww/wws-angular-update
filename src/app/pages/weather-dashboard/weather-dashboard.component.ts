@@ -6,6 +6,7 @@ import { WeatherStationData } from 'src/app/models/weather-station-data.model';
 import { ApiService } from 'src/app/services/api.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
+import { Forecast } from 'src/app/models/forecast.model';
 
 @Component({
   selector: 'app-weather-dashboard',
@@ -23,7 +24,9 @@ export class WeatherDashboardComponent implements AfterViewInit {
   dewPoint: number = 0;
   windDirection: number = 0;
   windSpeed: number = 0;
+  dailyRain: number = 0;
 
+  forecastData: Forecast;
   weatherData: WeatherData;
   stationData: WeatherStationData;
 
@@ -42,7 +45,8 @@ export class WeatherDashboardComponent implements AfterViewInit {
             columns: 1,
             miniCard: { cols: 1, rows: 1},
             card: { cols: 1, rows: 2 },
-            chart: { cols: 1, rows: 2}
+            chart: { cols: 1, rows: 2},
+            forecast: { cols: 1, rows: 4 },
           };
         }
 
@@ -51,6 +55,7 @@ export class WeatherDashboardComponent implements AfterViewInit {
           miniCard: { cols: 1, rows: 1 },
           card: { cols: 2, rows: 2 },
           chart: {  cols: 3, rows: 2 },
+          forecast: { cols: 3, rows: 2 },
         };
       })
     );
@@ -60,6 +65,7 @@ export class WeatherDashboardComponent implements AfterViewInit {
       this.windChill = Number.parseFloat(stationData.windchill_f);
       this.heatIndex = Number.parseFloat(stationData.heat_index_f);
       this.dewPoint = Number.parseFloat(stationData.dewpoint_f);
+      this.dailyRain = Number.parseFloat(stationData.davis_current_observation.rain_day_in);
     });
 
     this.apiService.getCurrentWeatherData().subscribe(currentWeather => {
@@ -67,6 +73,11 @@ export class WeatherDashboardComponent implements AfterViewInit {
       this.windDirection = Math.ceil((dir % 360) / 22.5) + 1;
       this.windSpeed = currentWeather.sensors[0].data[0].wind_speed;
     });
+
+    this.apiService.getForecastData().subscribe(forecast => {
+      console.log(forecast);
+      this.forecastData = forecast;
+    })
   }
 
   onSelect(event) {
