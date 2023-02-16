@@ -61,11 +61,11 @@ export class WeatherDashboardComponent implements AfterViewInit {
     );
    
     this.apiService.getWeatherStationData().subscribe(stationData => {
-      this.temp = Number.parseFloat(stationData.temp_f);
-      this.windChill = Number.parseFloat(stationData.windchill_f);
-      this.heatIndex = Number.parseFloat(stationData.heat_index_f);
-      this.dewPoint = Number.parseFloat(stationData.dewpoint_f);
-      this.dailyRain = Number.parseFloat(stationData.davis_current_observation.rain_day_in);
+      this.temp = stationData.sensors[0].data[0].temp_out;
+      this.windChill = stationData.sensors[0].data[0].wind_chill;
+      this.heatIndex = stationData.sensors[0].data[0].heat_index;
+      this.dewPoint = stationData.sensors[0].data[0].dew_point;
+      this.dailyRain = stationData.sensors[0].data[0].rain_day_in;
     });
 
     this.apiService.getCurrentWeatherData().subscribe(currentWeather => {
