@@ -20,6 +20,7 @@ import { WindRoseComponent } from './components/wind-rose/wind-rose.component';
 import { TotalDailyRainComponent } from './components/total-daily-rain/total-daily-rain.component';
 import { Forecast } from './models/forecast.model';
 import { ForecastComponent } from './components/forecast/forecast.component';
+import { HumidityComponent } from './components/humidity/humidity.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ForecastComponent } from './components/forecast/forecast.component';
     WindRoseComponent,
     TotalDailyRainComponent,
     ForecastComponent,
+    HumidityComponent,
   ],
   imports: [
     BrowserModule,

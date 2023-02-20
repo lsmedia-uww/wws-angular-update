@@ -40,5 +40,11 @@
         <app-total-daily-rain [rain]="dailyRain"></app-total-daily-rain >
       </mat-card>
     </mat-grid-tile>
+    <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard.cols" [rowspan]="( cardLayout | async )?.miniCard.rows">
+      <mat-card class="mat-elevation-z5">
+        <mat-card-title>Humidity</mat-card-title>
+        <app-humidity [humidity]="humidity"></app-humidity>
+      </mat-card>
+    </mat-grid-tile>
   </mat-grid-list>
 </div>

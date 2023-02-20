@@ -25,6 +25,7 @@ export class WeatherDashboardComponent implements AfterViewInit {
   windDirection: number = 0;
   windSpeed: number = 0;
   dailyRain: number = 0;
+  humidity: number =0;
 
   forecastData: Forecast;
   weatherData: WeatherData;
@@ -66,6 +67,7 @@ export class WeatherDashboardComponent implements AfterViewInit {
       this.heatIndex = stationData.sensors[0].data[0].heat_index;
       this.dewPoint = stationData.sensors[0].data[0].dew_point;
       this.dailyRain = stationData.sensors[0].data[0].rain_day_in;
+      this.humidity = stationData.sensors[0].data[0].hum_out;
     });
 
     this.apiService.getCurrentWeatherData().subscribe(currentWeather => {
