@@ -18,16 +18,6 @@
         <app-dew-point [dewPoint]="dewPoint"></app-dew-point>
       </mat-card>
     </mat-grid-tile>
-    <mat-grid-tile [colspan]="( cardLayout | async )?.chart.cols" [rowspan]="( cardLayout | async )?.chart.rows">
-      <mat-card class="mat-elevation-z5">
-        <app-forecast [forecast]="forecastData"></app-forecast>
-      </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="( cardLayout | async )?.chart.cols" [rowspan]="( cardLayout | async )?.chart.rows">
-      <mat-card class="mat-elevation-z5">
-        <app-pressure></app-pressure>
-      </mat-card>
-    </mat-grid-tile>
     <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard.cols" [rowspan]="( cardLayout | async )?.miniCard.rows">
       <mat-card class="mat-elevation-z5">
         <mat-card-title>Wind Speed & Direction</mat-card-title>
@@ -44,6 +34,16 @@
       <mat-card class="mat-elevation-z5">
         <mat-card-title>Humidity</mat-card-title>
         <app-humidity [humidity]="humidity"></app-humidity>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="( cardLayout | async )?.forecast.cols" [rowspan]="( cardLayout | async )?.forecast.rows">
+      <mat-card class="mat-elevation-z5">
+        <app-forecast [forecast]="forecastData"></app-forecast>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="( cardLayout | async )?.chart.cols" [rowspan]="( cardLayout | async )?.chart.rows">
+      <mat-card class="mat-elevation-z5">
+        <app-pressure></app-pressure>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>

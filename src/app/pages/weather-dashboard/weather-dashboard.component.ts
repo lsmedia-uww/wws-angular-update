@@ -52,11 +52,11 @@ export class WeatherDashboardComponent implements AfterViewInit {
         }
 
         return {
-          columns: 3,
+          columns: 4,
           miniCard: { cols: 1, rows: 1 },
           card: { cols: 2, rows: 2 },
-          chart: {  cols: 3, rows: 2 },
-          forecast: { cols: 3, rows: 2 },
+          chart: {  cols: 2, rows: 2 },
+          forecast: { cols: 2, rows: 3 },
         };
       })
     );
