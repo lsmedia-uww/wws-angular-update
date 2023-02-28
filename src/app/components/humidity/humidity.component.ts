@@ -1,4 +1,4 @@
-import { Component, Input, NgZone, OnInit  } from '@angular/core';
+import { Component, Input, NgZone, OnInit, SimpleChanges  } from '@angular/core';
 
 @Component({
   selector: 'app-humidity',
@@ -7,9 +7,20 @@ import { Component, Input, NgZone, OnInit  } from '@angular/core';
 })
 export class HumidityComponent implements OnInit{
   @Input() humidity: number;
+  radius = 54;
+  circumference = 2 * Math.PI * this.radius;
+  dashoffset: number;
 
-  constructor() { }
+  constructor() {
+    this.progress(0);
+   }
 
   ngOnInit(): void {
+    this.progress(this.humidity);
+  }
+
+  private progress(humidity: number) {
+    const progress = humidity / 100;
+    this.dashoffset = this.circumference * (1 - progress);
   }
 }

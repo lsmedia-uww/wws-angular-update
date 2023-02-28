@@ -21,6 +21,11 @@ import { TotalDailyRainComponent } from './components/total-daily-rain/total-dai
 import { Forecast } from './models/forecast.model';
 import { ForecastComponent } from './components/forecast/forecast.component';
 import { HumidityComponent } from './components/humidity/humidity.component';
+import { TempColorDirective } from './directives/temp-color.directive';
+import { HeatIndexDirective } from './directives/heat-index.directive';
+import { HumidityColorDirective } from './directives/humidity-color.directive';
+import { RainColorDirective } from './directives/rain-color.directive';
+import { WindSpeedColorDirective } from './directives/wind-speed-color.directive';
 
 @NgModule({
   declarations: [
@@ -34,6 +39,11 @@ import { HumidityComponent } from './components/humidity/humidity.component';
     TotalDailyRainComponent,
     ForecastComponent,
     HumidityComponent,
+    TempColorDirective,
+    HeatIndexDirective,
+    HumidityColorDirective,
+    RainColorDirective,
+    WindSpeedColorDirective
   ],
   imports: [
     BrowserModule,

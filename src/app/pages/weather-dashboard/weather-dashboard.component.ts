@@ -7,6 +7,7 @@ import { ApiService } from 'src/app/services/api.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
 import { Forecast } from 'src/app/models/forecast.model';
+import { TempVariableService } from 'src/app/temp-variable.service';
 
 @Component({
   selector: 'app-weather-dashboard',
@@ -17,6 +18,7 @@ import { Forecast } from 'src/app/models/forecast.model';
 export class WeatherDashboardComponent implements AfterViewInit {
   @ViewChild(TemperatureComponent)
   tempComponent: TemperatureComponent;
+  isloaded: boolean = false;
 
   temp: number = 0;
   windChill: number = 0;
@@ -36,6 +38,7 @@ export class WeatherDashboardComponent implements AfterViewInit {
   constructor(
     private apiService: ApiService,
     private breakpointObserver: BreakpointObserver,
+    private varServ: TempVariableService,
   ) { }
 
   ngAfterViewInit() {
@@ -61,13 +64,19 @@ export class WeatherDashboardComponent implements AfterViewInit {
       })
     );
    
-    this.apiService.getWeatherStationData().subscribe(stationData => {
+      this.apiService.getWeatherStationData().subscribe(stationData => {
       this.temp = stationData.sensors[0].data[0].temp_out;
       this.windChill = stationData.sensors[0].data[0].wind_chill;
       this.heatIndex = stationData.sensors[0].data[0].heat_index;
       this.dewPoint = stationData.sensors[0].data[0].dew_point;
       this.dailyRain = stationData.sensors[0].data[0].rain_day_in;
       this.humidity = stationData.sensors[0].data[0].hum_out;
+      this.varServ.setTempVariable(this.temp);
+      this.varServ.setHumVariable(this.humidity);
+      this.varServ.setWindChillVariable(this.windChill);
+      this.varServ.setRainVariable(this.dailyRain);
+      this.varServ.setWsVariable(this.windSpeed);
+      this.isloaded = true;
     });
 
     this.apiService.getCurrentWeatherData().subscribe(currentWeather => {

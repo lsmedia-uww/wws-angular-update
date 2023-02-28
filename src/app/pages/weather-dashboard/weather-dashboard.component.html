@@ -1,13 +1,13 @@
 <div class="container" style="padding: 16px;">
   <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" rowHeight="200px">
     <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard.cols" [rowspan]="( cardLayout | async )?.miniCard.rows">
-      <mat-card class="mat-elevation-z5">
-        <mat-card-title>Temperature</mat-card-title>
+      <mat-card *ngIf="isloaded" class= mat-elevation-z5 appTempColor>
+        <mat-card-title class="tempText">Temperature</mat-card-title>
         <app-temperature [temp]="temp" [windChill]="windChill"></app-temperature>
       </mat-card>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard.cols" [rowspan]="( cardLayout | async )?.miniCard.rows">
-      <mat-card class="mat-elevation-z5">
+      <mat-card *ngIf="isloaded" class="mat-elevation-z5" appHeatIndex>
         <mat-card-title>Heat Index</mat-card-title>
         <app-heat-index [heatIndex]="heatIndex"></app-heat-index>
       </mat-card>
@@ -19,25 +19,26 @@
       </mat-card>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard.cols" [rowspan]="( cardLayout | async )?.miniCard.rows">
-      <mat-card class="mat-elevation-z5">
+      <mat-card *ngIf="isloaded" class="mat-elevation-z5" appWindSpeedColor>
         <mat-card-title>Wind Speed & Direction</mat-card-title>
         <app-wind-rose [direction]="windDirection"></app-wind-rose>
       </mat-card>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard.cols" [rowspan]="( cardLayout | async )?.miniCard.rows">
-      <mat-card class="mat-elevation-z5">
+      <mat-card *ngIf="isloaded" class="mat-elevation-z5" appRainColor>
         <mat-card-title>Total Daily Rain</mat-card-title>
         <app-total-daily-rain [rain]="dailyRain"></app-total-daily-rain >
       </mat-card>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard.cols" [rowspan]="( cardLayout | async )?.miniCard.rows">
-      <mat-card class="mat-elevation-z5">
+      <mat-card *ngIf="isloaded" class="mat-elevation-z5" appHumidityColor>
         <mat-card-title>Humidity</mat-card-title>
-        <app-humidity [humidity]="humidity"></app-humidity>
+        <app-humidity *ngIf="isloaded" [humidity]="humidity"></app-humidity>
       </mat-card>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="( cardLayout | async )?.forecast.cols" [rowspan]="( cardLayout | async )?.forecast.rows">
       <mat-card class="mat-elevation-z5">
+        <mat-card-title>Forecast</mat-card-title>
         <app-forecast [forecast]="forecastData"></app-forecast>
       </mat-card>
     </mat-grid-tile>

@@ -1,8 +1,23 @@
-<div class="container">
+<!-- <div class="container">
     <div class="rounded">
       <i class="wi wi-humidity icon"></i>
     </div>
     <div class="temp">
-      <h1 style="margin-bottom: 0; font-size: x-large; font-weight: bold;">{{humidity}} %</h1>
+      <h1 class="percentage" style="margin-bottom: 0; font-size: x-large; font-weight: bold;">{{humidity}} %</h1>
     </div>
+  </div> -->
+
+<div class="container">
+  <div class="rounded">
+    <i class="wi wi-humidity icon"></i>
   </div>
+  <div class="progress">
+    <svg class="progress__svg" width="120" height="120" viewBox="0 0 120 120">
+      <circle class="progress__meter" cx="60" cy="60" [attr.r]="radius" stroke-width="12" />
+      <circle class="progress__value" [style.strokeDasharray]="circumference" [style.strokeDashoffset]="dashoffset" cx="60" cy="60"
+       [attr.r]="radius" stroke-width="12" />
+    </svg>
+  
+    <div class="progress__value-text">{{humidity}}%</div>
+  </div>
+</div>
