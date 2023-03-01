@@ -23,7 +23,7 @@
     font-size: 24pt;
   }
   
-  .temp {
+  .humid {
     display: flex;
     flex-direction: column;
   }
@@ -43,6 +43,7 @@
   
   .progress__svg {
     transform: rotate(-90deg);
+    margin-bottom: 15%;
   }
   
   .progress__meter,
@@ -62,4 +63,10 @@
   .spacer {
     width: "45px";
     height: "45px";
+  }
+
+  .dew {
+    position:absolute;
+    margin-bottom: 100px;
+
   }

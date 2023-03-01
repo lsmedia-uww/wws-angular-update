@@ -1,8 +1,10 @@
 <div class="container">
   <div class="rounded">
-    <i class="wi wi-hot icon"></i>
+    <i *ngIf="temp>50" class="wi wi-hot icon"></i>
+    <i *ngIf="temp<=50" class="wi wi-windy icon"></i>
   </div>
-  <div class="temp">
-    <h1 style="margin-bottom: 0; font-size: x-large; font-weight: bold;">{{heatIndex}} °F</h1>
+  <div class="heatChill">
+    <h1 *ngIf="temp>50" style="margin-bottom: 0; font-size: x-large; font-weight: bold;">{{heatIndex}} °F</h1>
+    <h1 *ngIf="temp<=50" style="margin-bottom: 0; font-size: x-large; font-weight: bold;">{{windChill}} °F</h1>
   </div>
 </div>

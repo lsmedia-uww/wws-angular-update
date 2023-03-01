@@ -7,7 +7,6 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TemperatureComponent implements OnInit {
   @Input() temp: number;
-  @Input() windChill: number;
 
   constructor() { }
 

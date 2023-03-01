@@ -28,6 +28,7 @@ export class WeatherDashboardComponent implements AfterViewInit {
   windSpeed: number = 0;
   dailyRain: number = 0;
   humidity: number =0;
+  solarRad: number =0;
 
   forecastData: Forecast;
   weatherData: WeatherData;
@@ -50,7 +51,7 @@ export class WeatherDashboardComponent implements AfterViewInit {
             miniCard: { cols: 1, rows: 1},
             card: { cols: 1, rows: 2 },
             chart: { cols: 1, rows: 2},
-            forecast: { cols: 1, rows: 4 },
+            forecast: { cols: 1, rows: 1 },
           };
         }
 
@@ -71,6 +72,10 @@ export class WeatherDashboardComponent implements AfterViewInit {
       this.dewPoint = stationData.sensors[0].data[0].dew_point;
       this.dailyRain = stationData.sensors[0].data[0].rain_day_in;
       this.humidity = stationData.sensors[0].data[0].hum_out;
+      this.solarRad = stationData.sensors[0].data[0].solar_rad
+      let dir = stationData.sensors[0].data[0].wind_dir;
+      this.windDirection = Math.ceil((dir % 360) / 22.5) + 1;
+      this.windSpeed = stationData.sensors[0].data[0].wind_speed;
       this.varServ.setTempVariable(this.temp);
       this.varServ.setHumVariable(this.humidity);
       this.varServ.setWindChillVariable(this.windChill);
@@ -79,11 +84,11 @@ export class WeatherDashboardComponent implements AfterViewInit {
       this.isloaded = true;
     });
 
-    this.apiService.getCurrentWeatherData().subscribe(currentWeather => {
-      let dir = currentWeather.sensors[0].data[0].wind_dir;
-      this.windDirection = Math.ceil((dir % 360) / 22.5) + 1;
-      this.windSpeed = currentWeather.sensors[0].data[0].wind_speed;
-    });
+    // this.apiService.getCurrentWeatherData().subscribe(currentWeather => {
+    //   let dir = currentWeather.sensors[0].data[0].wind_dir;
+    //   this.windDirection = Math.ceil((dir % 360) / 22.5) + 1;
+    //   this.windSpeed = currentWeather.sensors[0].data[0].wind_speed;
+    // });
 
     this.apiService.getForecastData().subscribe(forecast => {
       console.log(forecast);

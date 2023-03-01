@@ -7,6 +7,7 @@ import { Component, Input, NgZone, OnInit, SimpleChanges  } from '@angular/core'
 })
 export class HumidityComponent implements OnInit{
   @Input() humidity: number;
+  @Input() dewPoint: number;
   radius = 54;
   circumference = 2 * Math.PI * this.radius;
   dashoffset: number;

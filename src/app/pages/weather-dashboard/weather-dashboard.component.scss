@@ -16,279 +16,345 @@ mat-card {
 }
 
 .tempText {
-  color: white;
+  color: black;
 }
 
 //Temperature Background Colors
 
 .t0 {
-  background-color: #808080;
+  //background-color: #808080;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #808080 60%);
 }
 
 .t1 {
-  background-color: #000080;
+  //background-color: #000080;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #000080 60%);
 }
 
 .t2 {
-  background-color: #000099;
+  //background-color: #000099;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #000099 60%);
 }
 
 .t3 {
-  background-color: #0000B2;
+  //background-color: #0000B2;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #0000B2 60%);
 }
 
 .t4 {
-  background-color: #0000CC;
+  //background-color: #0000CC;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #0000CC 60%);
 }
 
 .t5 {
-  background-color: #0000E6;
+  // background-color: #0000E6;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #0000E6 60%);
 }
 
 .t6 {
-  background-color: #0000FF;
+  //background-color: #0000FF;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #0000FF 60%);
 }
 
 .t7 {
-  background-color: #1919FF;
+  //background-color: #1919FF;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #1919FF 60%);
 }
 
 .t8 {
-  background-color: #3333FF;
+  //background-color: #3333FF;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #3333FF 60%);
 }
 
 .t9 {
-  background-color: #4D4DFF;
+  //background-color: #4D4DFF;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #4D4DFF 60%);
 }
 
 .t10 {
-  background-color: #6666FF;
+  // background-color: #6666FF;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #6666FF 60%);
 }
 
 .t11 {
-  background-color: #8080FF;
+  // background-color: #8080FF;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #8080FF 60%);
 }
 
 .t12 {
-  background-color: #FF8080;
+  //background-color: #FF8080;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #FF8080 60%);
 }
 
 .t13 {
-  background-color: #FF6666;
+  // background-color: #FF6666;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #FF6666 60%);
 }
 
 .t14 {
-  background-color: #FF4D4D;
+  //background-color: #FF4D4D;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #FF4D4D 60%);
 }
 
 .t15 {
-  background-color: #FF3333;
+  //background-color: #FF3333;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #FF3333 60%);
 }
 
 .t16 {
-  background-color: #FF1919;
+  //background-color: #FF1919;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #FF1919 60%);
 }
 
 .t17 {
-  background-color: #FF0000;
+  //background-color: #FF0000;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #FF0000 60%);
 }
 
 .t18 {
-  background-color: #E60000;
+  //background-color: #E60000;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #E60000 60%);
 }
 
 .t19 {
-  background-color: #CC0000;
+  // background-color: #CC0000;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #CC0000 60%);
 }
 
 .t20 {
-  background-color: #B20000;
+  // background-color: #B20000;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #B20000 60%);
 }
 
 .t21 {
-  background-color: #990000;
+  // background-color: #990000;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #990000 60%);
 }
 
 .t22 {
-  background-color: #800000;
+  // background-color: #800000;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #800000 60%);
 }
 
 //Humidity Background Colors
 
 .hum0 {
-  background-color: #808080;
+  // background-color: #808080;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #808080 60%);
 }
 
 .hum1 {
-  background-color: #ffffff;
+  // background-color: #ffffff;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #ffffff 60%);
 }
 
 .hum2 {
-  background-color: #f7fcf5;
+  // background-color: #f7fcf5;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #f7fcf5 60%);
 }
 
 .hum3 {
-  background-color: #e5f5e0;
+  // background-color: #e5f5e0;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #e5f5e0 60%);
 }
 
 .hum4 {
-  background-color: #c7e9c0;
+  // background-color: #c7e9c0;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #c7e9c0 60%);
 }
 
 .hum5 {
-  background-color: #a1d99b;
+  // background-color: #a1d99b;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #a1d99b 60%);
 }
 
 .hum6 {
-  background-color: #74c476;
+  // background-color: #74c476;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #74c476 60%);
 }
 
 .hum7 {
-  background-color: #41ab5d;
+  // background-color: #41ab5d;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #41ab5d 60%);
 }
 
 .hum8 {
-  background-color: #238b45;
+  // background-color: #238b45;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #238b45 60%);
 }
 
 .hum9 {
-  background-color: #006d2c;
+  // background-color: #006d2c;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #006d2c 60%);
 }
 
 .hum10 {
-  background-color: #00441b;
+  // background-color: #00441b;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #00441b 60%);
 }
 
 //Heat Index Background Colors
 
 .hi0 {
-  background-color: #808080;
+  // background-color: #808080;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #808080 60%);
 }
 
 .hi1 {
-  background-color: #FFA366;
+  // background-color: #FFA366;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #FFA366 60%);
 }
 
 .hi2 {
-  background-color: #FF944D;
+  // background-color: #FF944D;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #FF944D 60%);
 }
 
 .hi3 {
-  background-color: #FF8533;
+  // background-color: #FF8533;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #FF8533 60%);
 }
 
 .hi4 {
-  background-color: #FF7519;
+  // background-color: #FF7519;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #FF7519 60%);
 }
 
 .hi5 {
-  background-color: #FF6600;
+  // background-color: #FF6600;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #FF6600 60%);
 }
 
 .hi6 {
-  background-color: #E65C00;
+  // background-color: #E65C00;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #E65C00 60%);
 }
 
 .hi7 {
-  background-color: #CC5200;
+  // background-color: #CC5200;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #CC5200 60%);
 }
 
 .hi8 {
-  background-color: #8585C2;
+  // background-color: #8585C2;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #8585C2 60%);
 }
 
 .hi9 {
-  background-color: #7070B8;
+  // background-color: #7070B8;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #7070B8 60%);
 }
 
 .hi10 {
-  background-color: #5C5CAD;
+  // background-color: #5C5CAD;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #5C5CAD 60%);
 }
 
 .hi11 {
-  background-color: #4747A3;
+  // background-color: #4747A3;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #4747A3 60%);
 }
 
 .hi12 {
-  background-color: #333399;
+  // background-color: #333399;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #333399 60%);
 }
 
 .hi13 {
-  background-color: #2E2E8A;
+  // background-color: #2E2E8A;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #2E2E8A 60%);
 }
 
 .hi14 {
-  background-color: #29297A;
+  // background-color: #29297A;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #29297A 60%);
 }
 
 //Wind Speed Background Colors
 
 .ws0 {
-  background-color: #808080;
+  // background-color: #808080;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #808080 60%);
 }
 
 .ws1 {
-  background-color: #B2C2D1;
+  // background-color: #B2C2D1;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #B2C2D1 60%);
 }
 
 .ws2 {
-  background-color: #99ADC2;
+  // background-color: #99ADC2;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #99ADC2 60%);
 }
 
 .ws3 {
-  background-color: #8099B2;
+  // background-color: #8099B2;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #8099B2 60%);
 }
 
 .ws4 {
-  background-color: #6685A3;
+  // background-color: #6685A3;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #6685A3 60%);
 }
 
 .ws5 {
-  background-color: #4D7094;
+  // background-color: #4D7094;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #4D7094 60%);
 }
 
 .ws6 {
-  background-color: #335C85;
+  // background-color: #335C85;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #335C85 60%);
 }
 
 .ws7 {
-  background-color: #194775;
+  // background-color: #194775;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #194775 60%);
 }
 
 .ws8 {
-  background-color: #003366;
+  // background-color: #003366;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #003366 60%);
 }
 
 //Rainfall Background Colors
 
 .rf0 {
-  background-color: #808080;
+  // background-color: #808080;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #808080 60%);
 }
 
 .rf1 {
-  background-color: #ADEBFF;
+  // background-color: #ADEBFF;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #ADEBFF 60%);
 }
 
 .rf2 {
-  background-color: #99E6FF;
+  // background-color: #99E6FF;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #99E6FF 60%);
 }
 
 .rf3 {
-  background-color: #85E0FF;
+  // background-color: #85E0FF;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #85E0FF 60%);
 }
 
 .rf4 {
-  background-color: #70DBFF;
+  // background-color: #70DBFF;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #70DBFF 60%);
 }
 
 .rf5 {
-  background-color: #5CD6FF;
+  // background-color: #5CD6FF;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #5CD6FF 60%);
 }
 
 .rf6 {
-  background-color: #47D1FF;
+  // background-color: #47D1FF;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #47D1FF 60%);
 }
 
 .rf7 {
-  background-color: #33CCFF;
+  // background-color: #33CCFF;
+  background: linear-gradient(90deg, rgba(255,255,255) 30%, #33CCFF 60%);
 }
