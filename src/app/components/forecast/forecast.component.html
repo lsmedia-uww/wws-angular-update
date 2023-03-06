@@ -67,7 +67,25 @@
     </table> -->
   </div>
   <ng-template #elseBlock>
-    <table style="width: 100%; height: 100%;">
+    <div class="wrapper-test">
+      <div *ngFor="let item of forecast.daily">
+        <div class="item-card-test">
+          <div style="text-align: center; color: #000000; margin-top: 8px; font-size: 20px;">{{item.dt * 1000 | date:'EEEE d'}}</div>
+          <br>
+          <div>
+            <i class="wi wi-owm-{{item.weather[0].id}}" appForecastColors></i>
+          </div>
+          <div style="flex-direction: row; margin-top: 10px;">
+            <span style="color: #878787; margin-right: 4px; font-size: 15px;">{{item.temp.max | number:'1.0-0'}}°</span>
+            <span style="color: #bababa; font-size: 15px; text-align: center;">{{item.temp.min | number:'1.0-0'}}°</span>
+          </div>
+          <div>
+            <p style="color: #878787; text-align: center;">{{item.weather[0].description | titlecase}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <table style="width: 100%; height: 100%;"> -->
       <!-- <tr> -->
         <!-- <td style="width: 50%; height: 100%;"> -->
           <!-- <div class="current">
@@ -89,9 +107,9 @@
           </div> -->
         <!-- </td> -->
 
-        <td style="width: 100%; height: 100%;">
+        <!-- <td style="width: 100%; height: 100%;"> -->
           <!-- <cdk-virtual-scroll-viewport [itemSize]="7" class="scroll-viewport"> -->
-            <table mat-table [dataSource]="forecast.daily" class="item-table">
+            <!-- <table mat-table [dataSource]="forecast.daily" class="item-table">
               <ng-container matColumnDef="date">
                 <th mat-header-cell hidden="hidden" *matHeaderCellDef> Date </th>
                 <td mat-cell *matCellDef="let item">{{item.dt * 1000 | date:'E d'}}</td>
@@ -116,10 +134,10 @@
 
               <tr mat-header-row hidden="hidden" *matHeaderRowDef="displayedColumns"></tr>
               <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            </table>
+            </table> -->
           <!-- </cdk-virtual-scroll-viewport> -->
-        </td>
+        <!-- </td> -->
       <!-- </tr> -->
-    </table>
+    <!-- </table> -->
   </ng-template>
 </div>

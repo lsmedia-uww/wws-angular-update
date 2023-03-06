@@ -27,6 +27,7 @@ import { HumidityColorDirective } from './directives/humidity-color.directive';
 import { RainColorDirective } from './directives/rain-color.directive';
 import { WindSpeedColorDirective } from './directives/wind-speed-color.directive';
 import { SolarRadiationComponent } from './components/solar-radiation/solar-radiation.component';
+import { ForecastColorsDirective } from './directives/forecast-colors.directive';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { SolarRadiationComponent } from './components/solar-radiation/solar-radi
     HumidityColorDirective,
     RainColorDirective,
     WindSpeedColorDirective,
-    SolarRadiationComponent
+    SolarRadiationComponent,
+    ForecastColorsDirective
   ],
   imports: [
     BrowserModule,
