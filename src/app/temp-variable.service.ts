@@ -12,6 +12,7 @@ export class TempVariableService {
   rfGlobalVariable;
   wcGlobalVariable;
   rainGlobalVariable;
+  solarRadGlobalVariable;
 
   constructor() {
    }
@@ -78,5 +79,13 @@ export class TempVariableService {
 
    getRainVariable() {
     return this.rainGlobalVariable;
+   }
+
+   setSolarRadVariable(val: number) {
+    this.solarRadGlobalVariable = val;
+   }
+
+   getSolarRadVariable() {
+    return this.solarRadGlobalVariable;
    }
 }

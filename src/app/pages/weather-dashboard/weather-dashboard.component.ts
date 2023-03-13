@@ -81,6 +81,7 @@ export class WeatherDashboardComponent implements AfterViewInit {
       this.varServ.setWindChillVariable(this.windChill);
       this.varServ.setRainVariable(this.dailyRain);
       this.varServ.setWsVariable(this.windSpeed);
+      this.varServ.setSolarRadVariable(this.solarRad);
       this.isloaded = true;
     });
 

@@ -26,7 +26,7 @@
       </mat-card>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard.cols" [rowspan]="( cardLayout | async )?.miniCard.rows">
-      <mat-card class="mat-elevation-z5">
+      <mat-card *ngIf="isloaded" class="mat-elevation-z5" appSolarColors>
         <mat-card-title>Solar Radiation</mat-card-title>
         <app-solar-radiation [solarRad]="solarRad"></app-solar-radiation>
       </mat-card>
