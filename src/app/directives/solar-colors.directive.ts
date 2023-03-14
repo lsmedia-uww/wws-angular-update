@@ -12,7 +12,6 @@ export class SolarColorsDirective {
 
   changeColor (el: ElementRef) {
     var solarRad = this.varServe.getSolarRadVariable();
-    console.log(solarRad);
 
     if(solarRad >= 0 && solarRad <= 100) el.nativeElement.classList.add('solar0');
     else if(solarRad >=101 && solarRad <= 200){el.nativeElement.classList.add('solar1');}
