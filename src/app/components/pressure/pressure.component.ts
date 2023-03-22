@@ -30,7 +30,7 @@ export class PressureComponent implements OnInit {
     },
     yAxis: {
       title: {
-        text: 'Pressure (Bar)'
+        text: 'Pressure (mb)'
       }
     },
     time: {
@@ -69,7 +69,7 @@ export class PressureComponent implements OnInit {
       data.sensors[0].data.forEach(item => {
         const row = [
           new Date(item.ts * 1000).getTime(),
-          item.bar
+          Math.round((item.bar * 33.864)*100)/100 //convert from inch of mercury (hg) to (mb)
         ];
         sensorData.push(row);
       });
