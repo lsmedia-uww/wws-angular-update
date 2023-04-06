@@ -21,7 +21,7 @@ export class WindRoseComponent implements OnInit {
   @Input() direction: number;
   speed: number;
   position: string;
-  compassRoseValue = ["n", "nne", "ne", "ene", "e", "ese", "se", "sse", "s", "ssw", "sw", "wsw", "w", "wnw", "nw", "nnw", "n"];
+  compassRoseValue = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW", "N"];
   compassDegrees = [0, 23, 45, 68, 90, 113, 135, 158, 180, 203, 225, 248, 270, 293, 313, 336, 0];
   dir: number;
 
@@ -33,7 +33,9 @@ export class WindRoseComponent implements OnInit {
     this.apiService.getCurrentWeatherData().subscribe(currentWeather => {
       this.ngZone.run(() => {
         this.speed = currentWeather.sensors[0].data[0].wind_speed;
-        this.dir = this.compassDegrees[Math.floor(currentWeather.sensors[0].data[0].wind_dir / 16)];
+        this.dir = currentWeather.sensors[0].data[0].wind_dir;
+        //this.dir = this.compassDegrees[Math.floor(currentWeather.sensors[0].data[0].wind_dir / 16)];
+        this.position = this.compassRoseValue[Math.ceil((currentWeather.sensors[0].data[0].wind_dir % 360) / 22.5)];
       })
     });
   }
