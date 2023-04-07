@@ -148,12 +148,32 @@
   border-left: 1px solid #bababa;
   width: 10vw;
   margin-left: 20%;
+  --w: 10vw;
   //height: 15vh;
 
   i {
-    margin-top: 8px;
-    margin-bottom: 8px;
-    font-size: 5em;//70pt;//42pt;
+    margin-top: 5%;//8px;
+    margin-bottom: 5%;//8px;
+    font-size: calc((var(--w)/2));
+    //font-size: 5em;//70pt;//42pt;
     color: #d9d9d9;
   }
+}
+
+.max {
+  color: #878787;
+  margin-right: 4px;
+  font-size: calc((1.15vh) + 5px);//15px;
+}
+
+.min {
+  color: #bababa; 
+  font-size: calc((1.15vh) + 5px);//15px;
+  text-align: center;
+}
+
+.descriptionTxt {
+  color: #878787;
+  text-align: center;
+  font-size: calc((.90vh) + 5px);
 }
