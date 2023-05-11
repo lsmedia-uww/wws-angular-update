@@ -54,5 +54,25 @@
         <app-pressure></app-pressure>
       </mat-card>
     </mat-grid-tile>
+    <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard.cols" [rowspan]="( cardLayout | async )?.miniCard.rows">
+      <mat-card class="mat-elevation-z5">
+        <mat-card-title>Contact Information</mat-card-title>
+        <p style="font-size: 15px;">
+          <a href = "mailto: fryej@uww.edu">John Frye</a><br/>
+          Associate Professor <br />  
+          Phone: 262-472-5270 <br />  
+          Location: Upham 116 <br />  
+        </p>
+      </mat-card>
+    </mat-grid-tile>
   </mat-grid-list>
+  <!-- <div style="margin-left: 16px;">
+    <p style="font-size: 22px;">Contact Information</p>
+    <p style="font-size: 15px;">
+      <a href = "mailto: fryej@uww.edu">John Frye</a><br/>
+      Associate Professor <br />  
+      Phone: 262-472-5270 <br />  
+      Location: Upham 116 <br />  
+    </p>
+  </div> -->
 </div>
